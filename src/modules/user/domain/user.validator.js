@@ -8,11 +8,6 @@ const registerSchema = Joi.object({
 module.exports = { registerSchema };
 
 
-const validate = (schema) => (req, res, next) => {
-  const { error } = schema.validate(req.body);
-  if (error) return next(new Error(error.message));
-  next();
-};
 
 
 
